@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - name: Install Rust
       uses: actions-rs/toolchain@v1
       with:
@@ -19,9 +19,11 @@ jobs:
     - name: Install Tarpaulin
       run: cargo install cargo-tarpaulin
     - name: Run Tarpaulin
-      run: cargo tarpaulin --out Xml
+      run: cargo tarpaulin --out Xml --output-dir ./coverage
+    - name: List Coverage Files
+      run: ls -la ./coverage
     - name: Upload Coverage to Codecov
       uses: codecov/codecov-action@v2
       with:
-        files: ./coverage.xml
+        files: ./coverage/coverage.xml
         fail_ci_if_error: true
