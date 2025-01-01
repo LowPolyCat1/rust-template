@@ -1,0 +1,37 @@
+name: Build and Upload Release Binary
+
+on:
+  push:
+    branches: [ master, main ]
+  pull_request:
+    branches: [ master, main ]
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Rust
+      uses: actions-rs/toolchain@v1
+      with:
+        toolchain: stable
+    - name: Build Release
+      run: cargo build --release
+    - name: Create Release Directory
+      run: mkdir -p ./release
+    - name: Move Binary to Release Directory
+      run: |
+        if [ "${{ matrix.os }}" == "windows-latest" ]; then
+          mv target/release/*.exe ./release/
+        else
+          mv target/release/* ./release/
+        fi
+    - name: Upload Release Binary
+      uses: actions/upload-artifact@v2
+      with:
+        name: release-binary
+        path: ./release
