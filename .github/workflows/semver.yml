@@ -18,9 +18,9 @@ jobs:
 
           - name: Install Rust
             uses: actions-rs/toolchain@v1
-            with:
-              toolchain: ./rust-toolchain.toml
-              override: false
+            # with:
+            #   toolchain: stable
+            #   override: false
 
           - name: Install cargo-semver-checks
             run: cargo install cargo-semver-checks
