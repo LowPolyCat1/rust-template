@@ -1,6 +1,3 @@
-use tracing;
-use tracing_subscriber;
-
 fn main() {
     let file_appender = tracing_appender::rolling::minutely("./logs", "debug.log");
     let (non_blocking, _guard) = tracing_appender::non_blocking(file_appender);
