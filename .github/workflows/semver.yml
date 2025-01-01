@@ -24,4 +24,4 @@ jobs:
             run: cargo install cargo-semver-checks
 
           - name: Run cargo semver-checks
-            run: cargo semver-checks
+            run: cargo semver-checks --manifest-path ./Cargo.toml
