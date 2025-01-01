@@ -1,0 +1,29 @@
+name: Cargo Semver Checks
+
+on:
+    push:
+        branches:
+            - main
+    pull_request:
+        branches:
+            - main
+
+jobs:
+    semver-checks:
+        runs-on: ubuntu-latest
+
+        steps:
+          - name: Checkout repository
+            uses: actions/checkout@v2
+
+          - name: Install Rust
+            uses: actions-rs/toolchain@v1
+            with:
+              toolchain: ./rust-toolchain.toml
+              override: false
+
+          - name: Install cargo-semver-checks
+            run: cargo install cargo-semver-checks
+
+          - name: Run cargo semver-checks
+            run: cargo semver-checks
