@@ -2,11 +2,9 @@ name: Cargo Semver Checks
 
 on:
     push:
-        branches:
-            - main
+        branches: [ master, main ]
     pull_request:
-        branches:
-            - main
+        branches: [ master, main ]
 
 jobs:
     semver-checks:
