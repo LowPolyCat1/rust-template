@@ -1,3 +1,4 @@
+# use this for public repos that are supposed to be released to crates.io
 name: Semantic Version Checks
 
 on:
