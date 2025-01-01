@@ -1,4 +1,4 @@
-name: Rust
+name: Compilation Check
 
 on:
     push:

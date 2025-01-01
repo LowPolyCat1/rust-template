@@ -1,4 +1,4 @@
-name: Cargo Semver Checks
+name: Semantic Version Checks
 
 on:
     push:
