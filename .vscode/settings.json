@@ -11,4 +11,7 @@
     ],
     "rust-analyzer.showUnlinkedFileNotification": false,
     "rust-analyzer.check.allTargets": false,
+    "cSpell.words": [
+        "clippy"
+    ],
 }
