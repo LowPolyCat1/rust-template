@@ -2,19 +2,28 @@
 name = "rust-template"
 version = "0.1.0"
 edition = "2021"
-github = "lowpolycat1"
 authors = ["your name <email@email_client>"]
 description = "A Rust template project"
-license_file = "./license.txt"
+license = "MIT"
 repository = "https://github.com/yourusername/rust-template"
-twitter_handle = ""
-linkedin_username = ""
 
 [dependencies]
-tracing = "0.1.41"
-tracing-subscriber = "0.3.19"
-tracing-appender = "0.2.3"
-tokio = { version = "1.42.0", features = ["full"] }
-serde = { version = "1.0.217", features = ["derive"] }
-serde_json = "1.0.134"
-reqwest = "0.12.12"
+tracing = "*"
+tracing-subscriber = "*"
+tokio = { version = "*", features = ["full"] }
+serde = { version = "*", features = ["derive"] }
+thiserror = { version = "*" }
+
+[build-dependencies]
+
+
+[dev-dependencies]
+
+
+[profile.release]
+lto = true
+codegen-units = 1
+opt-level = 3
+debug = false
+panic = "abort"
+rpath = false
