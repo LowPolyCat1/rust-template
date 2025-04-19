@@ -167,7 +167,7 @@ Don't forget to give the project a star! Thanks again!
 ### Top contributors
 
 <a href="https://github.com/your_github_username/your_repo_name/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=your_github_username/your_repo_name" alt="contrib.rocks image" />
+  <img src="https://contrib.rocks/image?repo=LowPolyCat1/rust-template" alt="contrib.rocks image" />
 </a>
 
 <!-- LICENSE -->
